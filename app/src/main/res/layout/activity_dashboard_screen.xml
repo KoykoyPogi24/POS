@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDF6"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header: Menu + Logo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="Menu" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_logo"
+                android:contentDescription="BizCraft Logo" />
+        </LinearLayout>
+
+        <!-- Welcome Title -->
+        <TextView
+            android:id="@+id/welcomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to BizCraft POS"
+            android:textColor="#3A7A1E"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:paddingBottom="2dp" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/todaysDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's Date\n5/24/2025"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            android:paddingBottom="16dp" />
+
+        <!-- Cards Row 1: Total Sales, Transactions, Products -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="center"
+            android:paddingBottom="8dp">
+
+            <!-- Total Sales Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:text="Total Sales"
+                        android:textColor="#222"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="₱12,500"
+                        android:textColor="#3A7A1E"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:text="↑ 12% from yesterday"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"
+                        android:paddingTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Transactions Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:text="Transactions"
+                        android:textColor="#222"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="42"
+                        android:textColor="#3A7A1E"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:text="↑ 8% from yesterday"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"
+                        android:paddingTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Products Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:text="Products"
+                        android:textColor="#222"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="7"
+                        android:textColor="#FFA000"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:text="Needs restock soon"
+                        android:textColor="#FFA000"
+                        android:textSize="12sp"
+                        android:paddingTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Revenue Target Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:text="Revenue Target"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="₱78,500 / ₱100,000"
+                    android:textColor="#3A7A1E"
+                    android:textSize="16sp"
+                    android:paddingTop="6dp" />
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:progress="78"
+                    android:max="100"
+                    android:progressTint="#3A7A1E"
+                    android:backgroundTint="#E0E0E0"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sales Overview Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:text="Sales Overview - Past Week"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="Daily sales performance"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:paddingTop="6dp" />
+                <!-- Placeholder for chart/graph -->
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Top Selling Products Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="Top Selling Products"
+                        android:textColor="#222"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:text="View All"
+                        android:textSize="12sp"
+                        android:backgroundTint="#F5F5F5"
+                        android:textColor="#3A7A1E"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:elevation="0dp" />
+                </LinearLayout>
+
+                <!-- Product List (static for mockup) -->
+                <TextView
+                    android:text="Handwoven Basket    28 sold    15 in stock"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="8dp" />
+                <TextView
+                    android:text="Local Honey    24 sold    8 in stock"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:text="Embroidered Shirt    18 sold    12 in stock"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:text="Wooden Utensils    15 sold    23 in stock"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:text="Coconut Oil Soap    14 sold    9 in stock"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Recent Transactions Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="Recent Transactions"
+                        android:textColor="#222"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:text="View All"
+                        android:textSize="12sp"
+                        android:backgroundTint="#F5F5F5"
+                        android:textColor="#3A7A1E"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:elevation="0dp" />
+                </LinearLayout>
+
+                <!-- Transaction List (static for mockup) -->
+                <TextView
+                    android:text="TX-2023-001   ₱750   3 items"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="8dp" />
+                <TextView
+                    android:text="TX-2023-002   ₱1,200   5 items"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:text="TX-2023-003   ₱350   2 items"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:text="TX-2023-004   ₱2,100   8 items"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:text="TX-2023-005   ₱960   4 items"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="© 2025 BizCraft POS for Produkto Antiqueño\nPrivacy Policy   Terms of Service   Help"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
