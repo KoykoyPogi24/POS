@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dashboard_green">#3A7A1E</color>
+    <color name="dashboard_light_green">#4CAF50</color>
+    <color name="dashboard_orange">#FFA000</color>
+    <color name="dashboard_bg">#FFFDF6</color>
+    <color name="dashboard_grey">#888888</color>
+    <color name="dashboard_card_bg">#FFFFFF</color>
+    <color name="dashboard_progress_bg">#E0E0E0</color>
 </resources>
