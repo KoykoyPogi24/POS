@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    android:backgroundTint="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvCartProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Handwoven Basket (Large)"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnRemove"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintWidth_percent="0.7"/>
+
+        <TextView
+            android:id="@+id/tvCartProductQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x2"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/tvCartProductName"
+            app:layout_constraintStart_toStartOf="@id/tvCartProductName"/>
+
+        <TextView
+            android:id="@+id/tvCartProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱450"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/dashboard_green"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvCartProductQty"
+            app:layout_constraintStart_toStartOf="@id/tvCartProductName"/>
+
+        <TextView
+            android:id="@+id/tvCartProductBarcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barcode: 8904182011293"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/tvCartProductPrice"
+            app:layout_constraintStart_toStartOf="@id/tvCartProductName"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRemove"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:backgroundTint="@color/colorError"
+            app:cornerRadius="8dp"
+            app:iconTint="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvCartProductName"
+            android:layout_marginStart="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView> 
