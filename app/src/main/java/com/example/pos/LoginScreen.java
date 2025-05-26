@@ -40,11 +40,9 @@ public class LoginScreen extends AppCompatActivity {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
                 // Redirect based on user type
                 if ("admin".equals(user.getUserType())) {
-                    // TODO: Replace with your Admin dashboard activity
-                    // startActivity(new Intent(this, AdminDashboardActivity.class));
-                } else {
-                    // TODO: Replace with your Cashier dashboard activity
-                    // startActivity(new Intent(this, CashierDashboardActivity.class));
+                    startActivity(new Intent(this, AdminDashboardActivity.class));
+                } else if ("cashier".equals(user.getUserType())) {
+                    startActivity(new Intent(this, DashboardScreen.class));
                 }
                 finish();
             } else {

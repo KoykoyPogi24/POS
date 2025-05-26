@@ -58,6 +58,12 @@ public class DashboardScreen extends AppCompatActivity {
                     startActivity(new Intent(DashboardScreen.this, TransactionScreen.class));
                 } else if (id == R.id.nav_reports) {
                     startActivity(new Intent(DashboardScreen.this, ReportScreen.class));
+                } else if (id == R.id.nav_logout) {
+                    Intent intent = new Intent(DashboardScreen.this, LoginScreen.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                    return true;
                 }
                 drawerLayout.closeDrawer(navView);
                 return true;

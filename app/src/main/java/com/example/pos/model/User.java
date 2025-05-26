@@ -4,7 +4,7 @@ public class User {
     private int id;
     private String username;
     private String passwordHash;
-    private String userType; // "admin" or "cashier"
+    private String userType; // "admin", "cashier", or "inventory_manager"
 
     public User() {}
 
