@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <!-- Title and Close Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/tvDialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New Transaction"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:textColor="#222" />
+        <ImageButton
+            android:id="@+id/btnCloseDialog"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Close" />
+    </LinearLayout>
+
+    <!-- Customer Name -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customer Name (Optional)"
+        android:textColor="#222"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+    <EditText
+        android:id="@+id/etCustomerName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter customer name or leave blank for walk-in"
+        android:background="@drawable/rounded_edittext_bg"
+        android:padding="12dp"
+        android:textColor="#222"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- Add Products -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Products"
+        android:textColor="#222"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+    <EditText
+        android:id="@+id/etProductSearch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Search products..."
+        android:background="@drawable/rounded_edittext_bg"
+        android:padding="12dp"
+        android:textColor="#222"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- Product List -->
+    <LinearLayout
+        android:id="@+id/layoutProductList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_card_bg"
+        android:layout_marginTop="8dp"
+        android:padding="8dp">
+        <!-- Example product row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Handwoven Basket (Large)  ₱450"
+                android:textColor="#444"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/btnAddProduct1"
+                android:layout_width="64dp"
+                android:layout_height="40dp"
+                android:text="Add"
+                android:textColor="#FFF"
+                android:backgroundTint="#101A2C"
+                android:background="@drawable/rounded_button_dark" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Local Honey (500ml)  ₱220"
+                android:textColor="#444"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/btnAddProduct2"
+                android:layout_width="64dp"
+                android:layout_height="40dp"
+                android:text="Add"
+                android:textColor="#FFF"
+                android:backgroundTint="#101A2C"
+                android:background="@drawable/rounded_button_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Payment Method -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Payment Method"
+        android:textColor="#222"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:singleSelection="true">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCash"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash"
+            android:checked="true"
+            app:chipBackgroundColor="@color/green_chip_selector"
+            android:textColor="#FFF" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGCash"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GCash" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCreditCard"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="24dp">
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Cancel"
+            android:textColor="#101A2C"
+            android:backgroundTint="#FFF"
+            android:background="@drawable/rounded_button_outline_dark"
+            android:layout_marginEnd="12dp" />
+        <Button
+            android:id="@+id/btnComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Complete Transaction"
+            android:textColor="#FFF"
+            android:backgroundTint="#101A2C"
+            android:background="@drawable/rounded_button_dark" />
+    </LinearLayout>
+
+</LinearLayout> 

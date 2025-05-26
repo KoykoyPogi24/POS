@@ -1,19 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#FFFDEB">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- BizCraft POS Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BizCraft POS"
+            android:textColor="#388E3C"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empowering Local Businesses"
+            android:textColor="#8D6E63"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingBottom="12dp" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A complete point-of-sale solution for Produkto Antiqueño, supporting local MSMEs in San Jose de Buenavista, Antique, Philippines."
+            android:textColor="#444"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+        <!-- Main Action Buttons Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="28dp">
+
+            <Button
+                android:id="@+id/btnEnterDashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Enter Dashboard"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:backgroundTint="#222C36"
+                android:layout_marginEnd="12dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:elevation="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnProcessSale"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Process Sale"
+                android:textColor="#388E3C"
+                android:textSize="16sp"
+                android:backgroundTint="#FFF"
+                app:strokeColor="@color/dashboard_green"
+                app:strokeWidth="2dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:elevation="2dp" />
+        </LinearLayout>
+
+        <!-- Feature Card: Real-time Inventory -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFF"
+            android:elevation="2dp"
+            android:padding="20dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvInventoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Real-time Inventory"
+                android:textColor="#222C36"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvInventoryDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Track stock levels across all product categories with automatic low-stock alerts."
+                android:textColor="#444"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:paddingBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnViewInventory"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="View Inventory"
+                android:textColor="#222C36"
+                android:textSize="15sp"
+                android:backgroundTint="#FFF"
+                android:elevation="1dp" />
+        </LinearLayout>
+
+        <!-- Feature Card: Easy Transactions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFF"
+            android:elevation="2dp"
+            android:padding="20dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvTransactionsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy Transactions"
+                android:textColor="#222C36"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvTransactionsDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Streamlined sales process with digital receipts and multiple payment options."
+                android:textColor="#444"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:paddingBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnViewTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="View Transactions"
+                android:textColor="#222C36"
+                android:textSize="15sp"
+                android:backgroundTint="#FFF"
+                android:elevation="1dp" />
+        </LinearLayout>
+
+        <!-- Feature Card: Insightful Reports -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFF"
+            android:elevation="2dp"
+            android:padding="20dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvReportsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insightful Reports"
+                android:textColor="#222C36"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvReportsDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comprehensive analytics to help make data-driven decisions for your business."
+                android:textColor="#444"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:paddingBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnViewReports"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="View Reports"
+                android:textColor="#222C36"
+                android:textSize="15sp"
+                android:backgroundTint="#FFF"
+                android:elevation="1dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
